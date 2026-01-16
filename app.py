@@ -74,7 +74,7 @@ with st.container():
             st.success("✅ Guardado exitosamente en Google Sheets")
             st.rerun()
         else:
-            st.error(⚠️ Por favor, rellene Producto y Cantidad.")
+            st.error("Atencion: Por favor, rellene Producto y Cantidad.")
 
 st.divider()
 
@@ -111,4 +111,5 @@ if not df_existente.empty:
         mask = df_hist.apply(lambda row: busqueda.lower() in str(row).lower(), axis=1)
         df_hist = df_hist[mask]
     
+
     st.dataframe(df_hist[['Fecha', 'Producto', 'Código', 'Lote', 'Tipo', 'Cant', 'Unidad']], use_container_width=True)
